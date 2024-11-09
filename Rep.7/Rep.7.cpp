@@ -103,7 +103,7 @@ int main() {
 			break;
 
 		case 4:
-			showStudents(students, count);
+			cout << "Середнiй бал: " << calculateAverageGrade(students, count) << endl;
 			break;
 
 		case 5:
