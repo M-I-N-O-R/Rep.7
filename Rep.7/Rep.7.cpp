@@ -8,7 +8,7 @@ struct Student {
 	double grade;
 };
 
-void addStudent(Student *students, int& count, const string& name, double grade){ 
+void addStudent(Student* students, int& count, const string& name, double grade){ 
 	Student* newStudents = new Student[count + 1];
 	
 	for (int i = 0; i < count; i++) {
@@ -21,7 +21,7 @@ void addStudent(Student *students, int& count, const string& name, double grade)
 	count++;
 }
 
-void delStudent(Student*& students, int& count, const string& name) {
+void delStudent(Student* students, int& count, const string& name) {
 	int index = -1;
 	for (int i = 0; i < count; i++) {
 		if (students[i].name == name) {
