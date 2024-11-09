@@ -105,9 +105,6 @@ int main() {
 		case 4:
 			showStudents(students, count);
 			break;
-			case 3:
-			cout << "Середнiй бал: " << calculateAverageGrade(students, count) << endl;
-			break;
 
 		case 5:
 			cout << "Вихiд з програми.\n";
