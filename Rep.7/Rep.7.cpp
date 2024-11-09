@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -8,7 +8,7 @@ struct Student {
 	double grade;
 };
 
-void addStudent(Student*& students, int& count, const string& name, double grade){ 
+void addStudent(Student *students, int& count, const string& name, double grade){ 
 	Student* newStudents = new Student[count + 1];
 	
 	for (int i = 0; i < count; i++) {
@@ -31,7 +31,7 @@ void delStudent(Student*& students, int& count, const string& name) {
 	}
 
 	if (index == -1) {
-		cout << "Студента(-ку) із таким іменем" << name << "не знайдено. \n";
+		cout << "Студента із таким іменем" << name << "не знайдено. \n";
 		return;
 	}
 
@@ -44,7 +44,7 @@ void delStudent(Student*& students, int& count, const string& name) {
 	delete[] students;
 	students = newStudents;
 	count--;
-	cout << "Студентa(-ку) " << name << " видалено.\n";
+	cout << "Студентa " << name << " видалено.\n";
 }
 
 double calculateAverageGrade(const Student* students, int count) {
@@ -76,19 +76,25 @@ int main() {
 	double grade;
 
 	do {
-		cout << "\nМеню:\n1. Додати студента(-ку)\n2. Видалити студента(-ку)\n3. Обчислити середнiй бал\n4. Вивести список студентiв\n0. Вийти\nВаш вибiр: ";
+		cout << "1. Додати студента" << endl;
+		cout << "2. Видалити студента" << endl;
+		cout << "3. Список студентiв" << endl;
+		cout << "4. Середнiй бал" << endl;
+		cout << "5. Вихiд" << endl;
+		cout << "------------------------" << endl;
+		cout << "Виберіть пункт: " << endl;
 		cin >> choice;
 
 		switch (choice) {
 		case 1:
-			cout << "Введiть iм'я студента(-ки): ";
+			cout << "Введiть iм'я студента: ";
 			cin >> name;
 			cout << "Введiть оцiнку: ";
 			cin >> grade;
 			addStudent(students, count, name, grade);
 			break;
 		case 2:
-			cout << "Введiть iм'я студента(-ки) для видалення: ";
+			cout << "Введiть iм'я студента для видалення: ";
 			cin >> name;
 			delStudent(students, count, name);
 			break;
