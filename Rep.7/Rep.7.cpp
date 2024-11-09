@@ -98,13 +98,15 @@ int main() {
 			cin >> name;
 			delStudent(students, count, name);
 			break;
-
 		case 3:
-			cout << "Середнiй бал: " << calculateAverageGrade(students, count) << endl;
+			showStudents(students, count);
 			break;
 
 		case 4:
 			showStudents(students, count);
+			break;
+			case 3:
+			cout << "Середнiй бал: " << calculateAverageGrade(students, count) << endl;
 			break;
 
 		case 5:
